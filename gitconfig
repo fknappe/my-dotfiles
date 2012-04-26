@@ -1,6 +1,10 @@
+[user]
+	name = username
+	email = username@email.com
 [core]
 	editor = mvim -f
         quotepath = false
+	excludesfile = ~/.gitignore
 [merge]
         log = true
 [color]
@@ -17,5 +21,11 @@
 [color "diff"]
         meta = yellow bold
         frag = magenta bold
-        old =magenta red bold
+        old = magenta red bold
         new = green bold
+[github]
+        user = username
+        password = password
+	token = public_key
+[push]
+	default = current

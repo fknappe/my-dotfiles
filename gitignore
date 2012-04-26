@@ -1,0 +1,27 @@
+#OS X files
+.DS_Store
+.* .swp
+* .swp
+
+#Java projects
+.classpath
+.project
+.settings/
+bin/
+.metadata
+*.class
+*.jar
+
+#Ruby projects
+/.bundle
+
+#Rails projects
+.rspec
+.sass-cache
+/log/*
+tmp/*
+bin/
+rdoc/
+coverage/
+.idea/
+/vendor/ruby
