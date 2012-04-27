@@ -1,0 +1,2 @@
+# Enables Safari web inspector
+defaults write com.apple.Safari WebKitDeveloperExtras -bool true
