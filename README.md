@@ -1,0 +1,6 @@
+Felipe Knappe dotfiles
+=======================
+
+#Installation 
+
+
