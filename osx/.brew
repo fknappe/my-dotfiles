@@ -1,0 +1,39 @@
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+#
+# For any doubt with brew formulas and dependencies, check out: http://braumeister.org/
+#
+
+# Install wget with IRI support
+brew install wget --enable-iri
+
+# RVM dependencies
+brew install autoconf
+brew install automake
+brew install https://raw.github.com/Homebrew/homebrew-dupes/master/apple-gcc42.rb
+
+# Rails dependencies
+brew install node
+brew install ack
+brew install readline
+brew install libxml2
+brew install libiconv
+brew install libxslt
+brew install libyaml
+
+# Install DB
+brew install mysql
+brew install postgresql
+brew install sqlite
+
+# Install everything else
+brew install curl
+brew install git
+brew install git-flow
+brew install bash-completion
+brew install ctags
+
