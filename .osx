@@ -1,2 +1,121 @@
-# Enables Safari web inspector
-defaults write com.apple.Safari WebKitDeveloperExtras -bool true
+read -p "This may overwrite your existent applications configuration. Are you sure you want to continue? (y/n) " -n 1
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  ## System Defaults
+
+  # Show remaining battery time; hide percentage
+  defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+  defaults write com.apple.menuextra.battery ShowTime -string "YES"
+
+  # Avoid creating .DS_Store files on network volumes
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+  # Disable the warning before emptying the Trash
+  defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+  # Empty Trash securely by default
+  defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+  ## Finder
+
+  # Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+  defaults write com.apple.finder QuitMenuItem -bool true
+
+  # Show all filename extensions in Finder
+  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+  # Display full POSIX path as Finder window title
+  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+  # Show status bar in Finder
+  defaults write com.apple.finder ShowStatusBar -bool true
+
+  # Disable the “Are you sure you want to open this application?” dialog
+  defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+  # Disable the warning when changing a file extension
+  defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+  # Expand save panel by default
+  defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+  # Expand print panel by default
+  defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+  ## Dock
+
+  # Don’t animate opening applications from the Dock
+  defaults write com.apple.dock launchanim -bool false
+
+  # Automatically hide and show the Dock
+  defaults write com.apple.dock autohide -bool false
+
+  # Make Dock icons of hidden applications translucent
+  defaults write com.apple.dock showhidden -bool true
+
+  # Disable the Dock 2D
+  defaults write com.apple.dock no-glass -bool false
+
+  # Show indicator lights for open applications in the Dock
+  defaults write com.apple.dock show-process-indicators -bool true
+
+  # Enable opening and closing window animations
+  defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+  # Automatically open a new Finder window when a volume is mounted
+  defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+  defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+  defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+  ## Safari
+
+  # Enable Safari’s debug menu
+  defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+  # Enables Safari web inspector
+  defaults write com.apple.Safari WebKitDeveloperExtras -bool true
+
+  # Add a context menu item for showing the Web Inspector in web views
+  defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+  ## Terminal
+
+  # Only use UTF-8 in Terminal.app
+  defaults write com.apple.terminal StringEncodings -array 4
+
+  ## iTunes
+
+  # Make ⌘ + F focus the search input in iTunes
+  defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
+
+  # Disable the Ping sidebar in iTunes
+  defaults write com.apple.iTunes disablePingSidebar -bool true
+
+  # Disable all the other Ping stuff in iTunes
+  defaults write com.apple.iTunes disablePing -bool true
+
+  # Enable iTunes track notifications in the Dock
+  defaults write com.apple.dock itunes-notifications -bool true
+
+  ## Hot corners
+
+  # Top left screen corner → Mission Control
+  defaults write com.apple.dock wvous-tl-corner -int 2
+  defaults write com.apple.dock wvous-tl-modifier -int 0
+
+  # Bottom left screen corner → Desktop
+  defaults write com.apple.dock wvous-bl-corner -int 4
+  defaults write com.apple.dock wvous-bl-modifier -int 0
+
+  # Top left screen corner → Exposé
+  defaults write com.apple.dock wvous-tr-corner -int 3
+  defaults write com.apple.dock wvous-tr-modifier -int 0
+
+  # Top right screen corner → Dashboard
+  defaults write com.apple.dock wvous-br-corner -int 6
+  defaults write com.apple.dock wvous-br-modifier -int 0
+
+  # Kill affected applications
+  for app in Finder Dock Safari iTunes Terminal; do killall "$app" > /dev/null 2>&1; done
+  echo "Done. Note that some of these changes require a logout/restart to take effect."
+fi
