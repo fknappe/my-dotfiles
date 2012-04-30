@@ -1,4 +1,4 @@
-Felipe Knappe dotfiles
+fknappe dotfiles
 =======================
 
 ## Installation 
