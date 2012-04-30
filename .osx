@@ -1,4 +1,4 @@
-read -p "This may overwrite your existent applications configuration. Are you sure you want to continue? (y/n) " -n 1
+read -p "This may overwrite your existent applications preferences. Are you sure you want to continue? (y/n) " -n 1
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   ## System Defaults
@@ -47,7 +47,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   # Don’t animate opening applications from the Dock
   defaults write com.apple.dock launchanim -bool false
 
-  # Automatically hide and show the Dock
+  # Don't automatically hide and show the Dock
   defaults write com.apple.dock autohide -bool false
 
   # Make Dock icons of hidden applications translucent
@@ -59,7 +59,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   # Show indicator lights for open applications in the Dock
   defaults write com.apple.dock show-process-indicators -bool true
 
-  # Enable opening and closing window animations
+  # Disable opening and closing window animations
   defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
   # Automatically open a new Finder window when a volume is mounted
@@ -112,7 +112,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   defaults write com.apple.dock wvous-tr-modifier -int 0
 
   # Top right screen corner → Dashboard
-  defaults write com.apple.dock wvous-br-corner -int 6
+  defaults write com.apple.dock wvous-br-corner -int 7
   defaults write com.apple.dock wvous-br-modifier -int 0
 
   # Kill affected applications
