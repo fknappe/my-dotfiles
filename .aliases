@@ -1,6 +1,6 @@
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
-alias p="cd ~/Projects"
+alias p="cd ~/Documents"
 alias g="git"
 alias v="vim"
 alias m="mate ."
@@ -20,3 +20,9 @@ alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && kil
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# IP Addresses
+alias ip="curl -s http://checkip.dyndns.com/ | sed 's/[^0-9\.]//g'"
+
+# Get OS X Software Updates, update Homebrew itself, and upgrade installed Homebrew packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade'
