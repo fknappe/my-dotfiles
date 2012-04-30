@@ -1,7 +1,12 @@
-# Make vim the default editor
-export EDITOR="vim"
+# Make mvim the default editor
+export EDITOR="mvim"
+
+# Adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
+
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
 
@@ -9,5 +14,9 @@ export LESS_TERMCAP_md="$ORANGE"
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
+
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+
+# Make ruby version and git repository visibile
+export PS1="\[\033[01;34m\]\$(~/.rvm/bin/rvm-prompt) \[\033[01;32m\]\w\[\033[00;33m\]\$(__git_ps1 \" (%s)\") \[\033[01;36m\]\$\[\033[00m\]"
