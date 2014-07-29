@@ -7,11 +7,19 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="winka"
 
-# Set to this to use case-sensitive completion
-CASE_SENSITIVE="true"
+# Example aliases
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzsh="subl ~/.oh-my-zsh"
+alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 
-# Comment this out to disable weekly auto-update checks
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+export UPDATE_ZSH_DAYS=30
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -25,15 +33,14 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github brew bundler gem heroku osx rails3 rake ruby rvm textmate vi-mode)
+plugins=(git git-extras github mvn osx vagrant brew bundler rails3 ruby sublime)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
-# ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
-       [ -r "$file" ] && source "$file"
-done
-unset file
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
+export M2_HOME=/Users/fknappe/apache-maven-3.1.1
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
