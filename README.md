@@ -3,7 +3,7 @@ My dotfiles
 
 Customized configuration files for UNIX-like systems (OS X and Linux) for git, ruby, vim, bash, etc.
 
-## Installation`
+## Installation
 
 ## Usage
 

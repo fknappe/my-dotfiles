@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+function exit_with_message() {
+	echo $1
+	exit 1
+}
+
+curl_available=$(command -v curl)
+wget_available=$(command -v wget)
+unzip_available=$(command -v unzip)
+
+dotfiles_zip=/tmp/my-dotfiles.zip
+dotfiles_dir=/tmp/my-dotfiles
+dotfiles_url=https://github.com/fknappe/my-dotfiles/archive/master.zip
+
+if [["$unzip_available" != ""]]; then
+
+elif
+
+else
+
+fi
+
+read "Choose your enviroment (osx/linux):"
+
+read "Would you like to customize git (y/n):"
+
+read "Would you like to configure a Ruby Environment (y/n):"
